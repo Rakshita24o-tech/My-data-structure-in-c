@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int **marks;          
+    int *numSubjects;   
+    float *averages;      
+    int students;
+
+    printf("Enter number of students: ");
+    scanf("%d", &students);
+
+    
+    marks = (int **)malloc(students * sizeof(int *));
+    numSubjects = (int *)malloc(students * sizeof(int));
+    averages = (float *)malloc(students * sizeof(float));
+
+    if (marks == NULL || numSubjects == NULL || averages == NULL) {
+        printf("Memory allocation failed!\n");
+        return 1;
+    }
+
+    
+    for (int i = 0; i < students; i++) {
+        printf("\nEnter number of subjects for student %d: ", i + 1);
+        scanf("%d", &numSubjects[i]);
+
+        marks[i] = (int *)malloc(numSubjects[i] * sizeof(int));
+        if (marks[i] == NULL) {
+            printf("Memory allocation failed!\n");
