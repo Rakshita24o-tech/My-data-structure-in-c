@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    int arr[] = {10, 20, 30, 40, 50};
+    int *ptr = arr;   // Points to first element of array
+
+    printf("Before update: ");
+    for(int i = 0; i < 5; i++) {
+        printf("%d ", arr[i]);
+    }
+
+    // Update elements using pointer
+    for(int i = 0; i < 5; i++) {
+        *(ptr + i) = *(ptr + i) + 5;  // Add 5 to each element
+    }
+
+    printf("\nAfter update: ");
+    for(int i = 0; i < 5; i++) {
+        printf("%d ", arr[i]);
+    }
+
+    return 0;
+}
