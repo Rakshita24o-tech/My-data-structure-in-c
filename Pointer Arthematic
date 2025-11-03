@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main() {
+    int arr[] = {10, 20, 30, 40, 50};
+    int *ptr = arr;  // Points to first element
+
+    printf("Pointer arithmetic demonstration:\n");
+    printf("ptr points to: %d\n", *ptr);      // 10
+    ptr++;                                     // Move to next integer
+    printf("ptr now points to: %d\n", *ptr);  // 20
+    ptr += 2;                                  // Jump 2 integers ahead
+    printf("ptr now points to: %d\n", *ptr);  // 40
+
+    return 0;
+}
