@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main() {
+    int num = 10;
+    int *ptr = &num;  // Pointer holds address of num
+
+    printf("Before update: %d\n", num);
+
+    *ptr = 25;  // Update value of num through pointer
+
+    printf("After update: %d\n", num);
+    printf("Value via pointer: %d\n", *ptr);
+
+    return 0;
+}
