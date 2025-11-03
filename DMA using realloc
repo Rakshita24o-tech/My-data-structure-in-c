@@ -1,0 +1,12 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int *ptr = (int *)malloc(sizeof(int)); // allocate 1 int
+    *ptr = 5;
+    ptr = (int *)realloc(ptr, 2 * sizeof(int)); // resize to 2 ints
+    ptr[1] = 10;
+    printf("%d %d\n", ptr[0], ptr[1]);
+    free(ptr);
+    return 0;
+}
