@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int* mergeSortedArrays(int *a, int n1, int *b, int n2, int *outSize) {
+    int *merged = (int *)malloc((n1 + n2) * sizeof(int)); // max possible size
+    if (merged == NULL) {
+        printf("Memory allocation failed!\n");
+        exit(1);
+    }
+
+    int i = 0, j = 0, k = 0;
+
+    
+    while (i < n1 && j < n2) {
+        if (a[i] < b[j]) {
+            if (k == 0 || merged[k-1] != a[i])
