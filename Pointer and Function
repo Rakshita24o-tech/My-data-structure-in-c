@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+void addTen(int *num) {
+    *num += 10; // modifies the original variable
+}
+
+int main() {
+    int value = 5;
+    printf("Before: %d\n", value);
+
+    addTen(&value); // pass address
+    printf("After: %d\n", value);
+
+    return 0;
+}
