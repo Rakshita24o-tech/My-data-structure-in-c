@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+char* my_strdup(const char *src) {
+    char *dest, *ptr;
+    int len = 0;
+
+    // Find length of src using pointer arithmetic
+    const char *temp = src;
+    while (*temp != '\0') {
+        len++;
+        temp++;
+    }
+
+    // Allocate memory (+1 for null terminator)
+    dest = (char *)malloc((len + 1) * sizeof(char));
+    if (dest == NULL) {
+        return NULL; // allocation failed
+    }
+
+    // Copy characters one by one using pointers
+    ptr = dest;
+    while (*src != '\0') {
+        *ptr = *src;
+        ptr++;
+        src++;
+    }
+
+    // Add null terminator
+    *ptr = '\0';
+
+    return dest;
+}
+
+int main() {
+    char str[100];
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);
+
+    // remove newline if present
+    for
