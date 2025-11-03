@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+int main() {
+    char str[] = "Pointer Example";
+    char *ptr = str;  // Pointer to first character
+
+    while(*ptr != '\0') {
+        printf("%c ", *ptr);
+        ptr++;
+    }
+
+    return 0;
+}
