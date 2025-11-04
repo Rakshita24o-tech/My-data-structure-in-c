@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+void swapStrings(char **str1, char **str2) 
+{
+    char *temp = *str1;
+    *str1 = *str2;
+    *str2 = temp;
+}
+
+int main()
+{
+    char *a = "Hello";
+    char *b = "World";
+
+    printf("Before swap: a = %s, b = %s\n", a, b);
+    swapStrings(&a, &b);
+    printf("After swap:  a = %s, b = %s\n", a, b);
+
+    return 0;
+}
