@@ -1,0 +1,19 @@
+#include <stdio.h>
+#define CAP 100
+int main() 
+{
+int a[CAP] = {10, 20, 30};
+int n = 3; // logical size
+int x = 40; // value to append
+if (n < CAP) 
+{
+a[n] = x; // place at next free slot
+n++; // increase logical size
+} else 
+{
+printf("Array is full\n");
+}
+for (int i = 0; i < n; i++) printf("%d ", a[i]);
+printf("\n");
+return 0;
+}
